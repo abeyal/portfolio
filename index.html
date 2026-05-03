@@ -7,30 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="login">
-        <h2>הזן סיסמה</h2>
-        <input type="password" id="password" placeholder="סיסמה">
-        <button onclick="checkPassword()">היכנס</button>
-        <p id="error"></p>
-    </div>
+    <header>
+        <h1>ברוכים הבאים לאתר של אייל אברהם</h1>
+        <p>פורטפוליו של הפרויקטים שלי ב-GitHub</p>
+    </header>
 
-    <div id="content" style="display: none;">
-        <header>
-            <h1>ברוכים הבאים לאתר של אייל אברהם</h1>
-            <p>פורטפוליו של הפרויקטים שלי ב-GitHub</p>
-        </header>
+    <main>
+        <section id="repos">
+            <h2>הפרויקטים שלי</h2>
+            <div id="repos-list"></div>
+        </section>
+    </main>
 
-        <main>
-            <section id="repos">
-                <h2>הפרויקטים שלי</h2>
-                <div id="repos-list"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 אייל אברהם. כל הזכויות שמורות.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2026 אייל אברהם. כל הזכויות שמורות.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

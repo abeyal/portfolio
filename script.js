@@ -1,26 +1,5 @@
-const PASSWORD = 'mypassword'; // שנה את הסיסמה כאן
-
-function checkPassword() {
-    const password = document.getElementById('password').value;
-    const error = document.getElementById('error');
-    
-    if (password === PASSWORD) {
-        localStorage.setItem('authenticated', 'true');
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-        fetchRepos();
-    } else {
-        error.textContent = 'סיסמה שגויה';
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    // בדוק אם המשתמש כבר מחובר (שמור ב-localStorage)
-    if (localStorage.getItem('authenticated') === 'true') {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-        fetchRepos();
-    }
+    fetchRepos();
 });
 
 async function fetchRepos() {
