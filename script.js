@@ -1,4 +1,4 @@
-const PASSWORD = 'mypassword'; // שנה את הסיסמה כאן
+const PASSWORD = 'Etypoa1375'; // שנה את הסיסמה כאן
 
 function checkPassword() {
     const password = document.getElementById('password').value;
