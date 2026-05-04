@@ -201,6 +201,55 @@ footer {
     }
 }
 
+.game-section {
+    margin-top: 2rem;
+}
+
+#game-area {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#color-display {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background-color: #ccc;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: 4px solid #333;
+}
+
+#start-game {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#start-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+#score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #2a2a4f;
+}
+
+#message {
+    font-size: 1rem;
+    color: #666;
+    min-height: 1.5rem;
+}
+
 @media (max-width: 640px) {
     section {
         padding: 1.5rem;
@@ -208,5 +257,10 @@ footer {
 
     header {
         padding: 1.5rem 1rem;
+    }
+
+    #color-display {
+        width: 150px;
+        height: 150px;
     }
 }
