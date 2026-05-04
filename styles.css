@@ -1,17 +1,42 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top left, #ffddff 0%, #ffe8b8 25%, #b8f0ff 80%);
+    color: #1f1f2e;
     direction: rtl;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 42rem;
+    height: 42rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 55%);
+    pointer-events: none;
+    filter: blur(40px);
+}
+
 header {
-    background-color: #333;
-    color: white;
+    background: linear-gradient(135deg, #7746ff 0%, #2cc3ff 100%);
+    color: #fff;
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.9s ease both;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 35%);
+    pointer-events: none;
 }
 
 .logo-container {
@@ -24,46 +49,123 @@ header {
     width: 140px;
     max-width: 100%;
     height: auto;
-    border: 3px solid #fff;
-    border-radius: 14px;
-    background: white;
+    border: 4px solid rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
 }
 
 main {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: -3rem auto 2rem;
+    padding: 0 1rem 2rem;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
     padding: 2rem;
+    box-shadow: 0 20px 40px rgba(39, 37, 77, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2a2a4f;
 }
 
 #repos-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .repo-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+    border-radius: 22px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(44, 73, 123, 0.12);
+    border: 1px solid rgba(118, 143, 255, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(44, 73, 123, 0.18);
 }
 
 .repo-card h3 {
     margin-top: 0;
+    font-size: 1.4rem;
+    color: #3d2b94;
 }
 
 .repo-card p {
-    color: #666;
+    color: #4f4f6d;
+    line-height: 1.7;
+    margin: 0.6rem 0;
 }
 
 .repo-card a {
-    color: #007acc;
+    color: #ff5c8a;
     text-decoration: none;
+    font-weight: 600;
 }
+
+.repo-card a:hover {
+    color: #2c97ff;
+}
+
+#repos-list .repo-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardEntrance 0.7s ease forwards;
+}
+
+#repos-list .repo-card:nth-child(1) { animation-delay: 0.1s; }
+#repos-list .repo-card:nth-child(2) { animation-delay: 0.16s; }
+#repos-list .repo-card:nth-child(3) { animation-delay: 0.22s; }
+#repos-list .repo-card:nth-child(4) { animation-delay: 0.28s; }
+#repos-list .repo-card:nth-child(5) { animation-delay: 0.34s; }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    padding: 1.2rem 1rem;
+    margin-top: 1rem;
+    color: #3d3d59;
+    font-size: 0.95rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    section {
+        padding: 1.5rem;
+    }
+
+    header {
+        padding: 1.5rem 1rem;
+    }
 }
