@@ -61,6 +61,47 @@ main {
     padding: 0 1rem 2rem;
 }
 
+.display-window {
+    display: flex;
+    justify-content: center;
+}
+
+.window-frame {
+    width: 100%;
+    max-width: 860px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(39, 37, 77, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+.window-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #e9efff 0%, #dde8ff 100%);
+    color: #2a2a4f;
+    font-weight: 700;
+}
+
+.window-titlebar::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f57;
+    display: inline-block;
+}
+
+.window-content {
+    padding: 2rem;
+    color: #2a2a4f;
+    line-height: 1.8;
+    text-align: right;
+}
+
 section {
     background: rgba(255, 255, 255, 0.92);
     border-radius: 24px;
