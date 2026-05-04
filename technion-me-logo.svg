@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00205b" />
+      <stop offset="100%" stop-color="#007acc" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="120" rx="18" fill="#fff" stroke="#00205b" stroke-width="4" />
+  <g transform="translate(18, 18)">
+    <circle cx="42" cy="42" r="36" fill="none" stroke="#00205b" stroke-width="8" />
+    <path d="M42 10 L42 74 M10 42 L74 42" stroke="#00205b" stroke-width="8" stroke-linecap="round" />
+    <path d="M16 16 L32 32 M32 52 L16 68 M68 16 L52 32 M52 52 L68 68" stroke="#007acc" stroke-width="8" stroke-linecap="round" />
+  </g>
+  <g font-family="Arial, sans-serif" fill="#00205b" text-anchor="start">
+    <text x="95" y="50" font-size="26" font-weight="700">הפקולטה למכונות</text>
+    <text x="95" y="85" font-size="18">Technion - Israel Institute of Technology</text>
+  </g>
+</svg>

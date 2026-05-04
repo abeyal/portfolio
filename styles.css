@@ -11,7 +11,22 @@ header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.logo-container img {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 14px;
+    background: white;
 }
 
 main {
