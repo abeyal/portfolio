@@ -1,7 +1,3 @@
-// אין כאן קריאות ל-GitHub API.
-// הקובץ הזה נשאר ריק למטרות תחזוקה בלבד.
-
-// משחק תגובה מהירה
 let score = 0;
 let gameActive = false;
 let targetColor = '';
@@ -18,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startGame() {
         score = 0;
-        scoreDisplay.textContent = 'ניקוד: 0';
-        messageDisplay.textContent = 'הכינו את עצמכם...';
+        scoreDisplay.textContent = 'Score: 0';
+        messageDisplay.textContent = 'Preparing your session...';
         startButton.disabled = true;
         gameActive = true;
 
         setTimeout(() => {
             showRandomColor();
-        }, 2000);
+        }, 1800);
     }
 
     function showRandomColor() {
@@ -36,45 +32,44 @@ document.addEventListener('DOMContentLoaded', function() {
         colorDisplay.style.backgroundColor = targetColor;
         startTime = Date.now();
 
-        messageDisplay.textContent = 'לחץ על הכפתור הירוק!';
+        messageDisplay.textContent = 'Click only when the target is green.';
 
         setTimeout(() => {
             if (gameActive) {
-                colorDisplay.style.backgroundColor = '#ccc';
-                messageDisplay.textContent = 'זמן נגמר! המשחק נגמר.';
+                colorDisplay.style.backgroundColor = '#e2e8f0';
+                messageDisplay.textContent = 'Time elapsed. Session ended.';
                 endGame();
             }
-        }, 2000);
+        }, 2200);
     }
 
     function checkClick() {
         if (!gameActive) return;
 
-        const clickTime = Date.now();
-        const reactionTime = clickTime - startTime;
+        const reactionTime = Date.now() - startTime;
 
         if (targetColor === 'green') {
             score += Math.max(0, 100 - Math.floor(reactionTime / 10));
-            scoreDisplay.textContent = `ניקוד: ${score}`;
-            messageDisplay.textContent = `מעולה! זמן תגובה: ${reactionTime}ms`;
-            colorDisplay.style.backgroundColor = '#ccc';
+            scoreDisplay.textContent = `Score: ${score}`;
+            messageDisplay.textContent = `Great reaction: ${reactionTime} ms`;
+            colorDisplay.style.backgroundColor = '#e2e8f0';
 
             setTimeout(() => {
                 if (gameActive) showRandomColor();
-            }, 1000);
+            }, 900);
         } else {
-            messageDisplay.textContent = 'טעית! לחץ רק על הירוק.';
-            colorDisplay.style.backgroundColor = '#ccc';
+            messageDisplay.textContent = 'Incorrect move. Wait for green only.';
+            colorDisplay.style.backgroundColor = '#e2e8f0';
             setTimeout(() => {
                 if (gameActive) showRandomColor();
-            }, 1500);
+            }, 1400);
         }
     }
 
     function endGame() {
         gameActive = false;
         startButton.disabled = false;
-        messageDisplay.textContent = `משחק נגמר! הניקוד הסופי: ${score}`;
+        messageDisplay.textContent = `Session completed. Final score: ${score}`;
     }
 });
 
